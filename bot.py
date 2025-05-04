@@ -19,8 +19,8 @@ def start(update: Update, context: CallbackContext) -> None:
 # Define a function to send an image
 def send_image(update: Update, context: CallbackContext) -> None:
     """Send an image to the user."""
-    image_path = "path/to/your/image.jpg"  # Change this to the path of your image
-    update.message.reply_photo(photo=open(image_path, 'rb'))
+    image_url = "https://i.ibb.co/QFsTxRHP/photo-2025-05-04-09-08-05.jpg"  # Direct image URL
+    update.message.reply_photo(photo=image_url)
 
 # Set up the CommandHandler to trigger actions
 updater.dispatcher.add_handler(CommandHandler("start", start))
