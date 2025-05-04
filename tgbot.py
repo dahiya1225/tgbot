@@ -9,8 +9,9 @@ if not token:
     raise ValueError("Telegram bot token not found. Please check the environment variable.")
 
 # Initialize the Updater with the token
-updater = Updater(token=token, use_context=True)
+from telegram import Application
 
+application = Application.builder().token(token).build()
 # Define a simple /start command
 def start(update: Update, context: CallbackContext) -> None:
     """Send a welcome message when the /start command is issued."""
