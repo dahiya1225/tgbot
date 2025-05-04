@@ -1,3 +1,10 @@
+import os
+
+# Fetch the token from environment variables
+token = os.getenv("tgbot")
+
+if not token:
+    raise ValueError("Telegram bot token not found. Please check the environment variable.")
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 import asyncio
